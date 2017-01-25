@@ -1,0 +1,58 @@
+#!/bin/bash
+
+while read var1 var2; do
+
+	case $var1 in
+		"unixSecondsUTC")
+			unixSecondsUTC=$var2
+			;;	
+		"sampleType")
+			sampleType=$var2
+			;;
+		"in_vlan")
+			in_vlan=$var2
+			;;
+		"out_vlan")
+			out_vlan=$var2
+			;;
+		"headerProtocol")
+			headerProtocol=$var2
+			if [ $headerProtocol = "11" ]; then
+				headerProtocol="IPv4"
+			elif [ $headerProtocol = "12" ]; then
+				headerProtocol="IPv6"
+			elif [ $headerProtocol = "1" ]; then
+				headerProtocol='ethernet'
+			fi
+			;;
+		"sampledPacketSize")
+			sampledPacketSize=$var2
+			;;
+		"dstMAC")
+			dstMAC=$var2
+			;;
+		"srcMAC")
+			srcMAC=$var2
+			;;
+		"srcIP")
+			srcIP=$var2
+			;;
+		"dstIP")
+			dstIP=$var2
+			;;
+	esac
+	
+	if [ "$var1" == "endSample" ] && [ "$sampleType" == "FLOWSAMPLE" ]; then
+		echo 'octets','in_vlan='$in_vlan,'out_vlan='$out_vlan,'ipversion='$headerProtocol,'dstMAC='$dstMAC,'srcMAC='$srcMAC,'srcIP='$srcIP,'dstIP='$dstIP 'value='$sampledPacketSize $unixSecondsUTC  
+		in_vlan="NULL"
+		out_vlan="NULL "
+		ipversion="NULL "
+		dstMAC="NULL "
+		srcMAC="NULL "
+		srcIP="NULL"
+		dstIP="NULL"
+		sampledPacketSize=" "		
+	fi
+
+done 
+

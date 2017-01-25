@@ -1,0 +1,2 @@
+guisaulo@wall-ptt:~/testes$ curl -i -XPOST 'http://localhost:8086/write?db=teste&precision=s' --data-binary @data
+

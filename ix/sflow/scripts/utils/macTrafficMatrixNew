@@ -1,0 +1,28 @@
+#!/usr/bin/awk -f
+# TRAFFIC MATRIX PTT-MG
+
+BEGIN{ lastInt = 0;}
+/unixSecondsUTC/{ 
+  currentInt = $2 - ($2 % 10);
+  if(currentInt != lastInt) {
+    for(key in count) {
+#      print "matrizTroca." key "." count[key] " " strftime("%R", lastInt) " " key " " count[key];
+      print (key " " count[key] " " lastInt); # > "saida."currentInt;
+    }
+    lastInt = currentInt;
+    delete count;
+  }
+}
+
+/out_vlan/{ outVlan = $2; }
+/IPProtocol/{ proto = $2; }
+/srcMAC/{ srcMAC = $2; }
+/sampledPacketSize/{ sampledPacketSize = $2; }
+/dstMAC/{
+  dstMAC = $2;
+  if( (srcMAC != dstMAC) && (dstMAC != "") ){ 
+    key = outVlan " " srcMAC " " $2 " " proto;
+    count[key] = count[key] + sampledPacketSize;
+  }
+}
+END{}

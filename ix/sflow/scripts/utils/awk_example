@@ -1,0 +1,1 @@
+cat AS_map.txt | awk '{print $2,$1}' FS=';' OFS=';' > AS_map2.txt

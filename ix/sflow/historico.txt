@@ -1,0 +1,804 @@
+    1  sudo tcpdump -i sw3-eth1 icmp
+    2  sudo tcpdump -i sw3-eth3 icmp
+    3  sudo tcpdump -i sw3-eth2 icmp
+    4  sudo tcpdump -i sw6-eth1 icmp
+    5  sudo tcpdump -i sw6-eth2 icmp
+    6  lçs
+    7  ls
+    8  cd sflow-tools/
+    9  lçs
+   10  ls
+   11  cd ..
+   12  ls
+   13  cd pi/
+   14  ls
+   15  cd sflow/
+   16  ls
+   17  cat sflow_readme.txt 
+   18  sudo ovs-vsctl -- --id=@sflow create sflow agent=eth0  target=\"127.0.0.1:6343\" sampling=20 polling=20 -- set bridge sw5 sflow=@sflow
+   19  sudo ovs-vsctl -- --id=@sflow create sflow agent=eth0  target=\"127.0.0.1:6343\" sampling=20 polling=20 -- set bridge sw1 sflow=@sflow
+   20  sudo ovs-vsctl -- --id=@sflow create sflow agent=eth0  target=\"127.0.0.1:6343\" sampling=20 polling=20 -- set bridge sw2 sflow=@sflow
+   21  sudo ovs-vsctl -- --id=@sflow create sflow agent=eth0  target=\"127.0.0.1:6343\" sampling=20 polling=20 -- set bridge sw3 sflow=@sflow
+   22  sudo ovs-vsctl -- --id=@sflow create sflow agent=eth0  target=\"127.0.0.1:6343\" sampling=20 polling=20 -- set bridge sw4 sflow=@sflow
+   23  sudo ovs-vsctl -- --id=@sflow create sflow agent=eth0  target=\"127.0.0.1:6343\" sampling=20 polling=20 -- set bridge sw6 sflow=@sflow
+   24  netstat -tanlp 
+   25  netstat -tanlp  | grep 6343
+   26  sudo netstat -tanlp  | grep 6343
+   27  ls
+   28  ls -lah
+   29  more blablau 
+   30  ls
+   31  cd mininet/
+   32  ls
+   33  cd ..
+   34  ls
+   35  cd pi/
+   36  ls
+   37  cd mi
+   38  cd mininet/
+   39  ls
+   40  cat mininet_readme.txt 
+   41  ls
+   42  sudo ./sdx-mininet.py
+   43  exit
+   44  sudo ./sdx-mininet.py
+   45  ls
+   46  cd pi
+   47  ls
+   48  cd mininet/
+   49  ls
+   50  sudo ./sdx-mininet.py
+   51  mininet
+   52  telnet localhost 2605
+   53  cd pi
+   54  ls
+   55  cd mininet/
+   56  ls
+   57  sudo ./sdx-mininet.py 
+   58  for i in $(seq 6) ; do sudo ovs-vsctl del-controller sw$i; done
+   59  for i in $(seq 6) ; do sudo ovs-vsctl --no-wait set bridge sw$i stp_enable=true; done
+   60  for i in $(seq 6); do sudo ovs-ofctl add-flow sw$i actions=NORMAL; done
+   61  do sudo ovs-vsctl del-controller bgpmg
+   62  sudo ovs-vsctl del-controller bgpmg
+   63  sudo ovs-vsctl --no-wait set bridge bgpmg stp_enable=true
+   64  sudo ovs-ofctl add-flow bgpmg actions=NORMAL
+   65  for i in $(seq 6) ; do sudo ovs-vsctl del-controller sw$i; done
+   66  for i in $(seq 6) ; do sudo ovs-vsctl --no-wait set bridge sw$i stp_enable=true; done
+   67  sudo ovs-ofctl add-flow bgpmg actions=NORMAL
+   68  for i in $(seq 6) ; do sudo ovs-vsctl del-controller sw$i; done
+   69  sudo ovs-vsctl --no-wait set bridge bgpmg stp_enable=true
+   70  for i in $(seq 6) ; do sudo ovs-vsctl del-controller sw$i; done
+   71  for i in $(seq 6) ; do sudo ovs-vsctl --no-wait set bridge sw$i stp_enable=true; done
+   72  for i in $(seq 6); do sudo ovs-ofctl add-flow sw$i actions=NORMAL; done
+   73  sudo ovs-vsctl del-controller bgpmg
+   74  sudo ovs-vsctl --no-wait set bridge bgpmg stp_enable=true
+   75  sudo ovs-ofctl add-flow bgpmg actions=NORMAL
+   76  sudo mn -c
+   77  for i in $(seq 6) ; do sudo ovs-vsctl del-controller sw$i; done
+   78  for i in $(seq 6) ; do sudo ovs-vsctl --no-wait set bridge sw$i stp_enable=true; done
+   79  for i in $(seq 6); do sudo ovs-ofctl add-flow sw$i actions=NORMAL; done
+   80  ping AS1r1
+   81  sudo ovs-vsctl del-controller bgpmg
+   82  sudo mn -c
+   83  sudo ovs-vsctl --no-wait set bridge bgpmg stp_enable=true
+   84  sudo ovs-ofctl add-flow bgpmg actions=NORMAL
+   85  sudo reboot
+   86  cd pi
+   87  ls
+   88  cd mininet/
+   89  ls
+   90  sudo ./sdx-mininet.py 
+   91  exit
+   92  for i in $(seq 6) ; do sudo ovs-vsctl del-controller sw$i; done
+   93  for i in $(seq 6) ; do sudo ovs-vsctl --no-wait set bridge sw$i stp_enable=true; done
+   94  for i in $(seq 6); do sudo ovs-ofctl add-flow sw$i actions=NORMAL; done
+   95  sudo ovs-vsctl del-controller bgpmg
+   96  sudo ovs-vsctl --no-wait set bridge bgpmg stp_enable=true
+   97  sudo ovs-ofctl add-flow bgpmg actions=NORMAL
+   98  ls
+   99  more saida
+  100  cat saida | grep 192.168.1.1
+  101  cat saida | grep 192.0.0.1
+  102  cat saida | grep 192.168.1.1
+  103  cat saida | grep 192.168.2.1
+  104  cat saida | grep 192.168.3.1
+  105  cat saida | grep 192.168.4.1
+  106  cat saida | grep 192.168.5.1
+  107  ipcalc
+  108  sudo apt install ipcalc
+  109  ipcalc sudo apt install ipcalc
+  110  ipcalc
+  111  ipcalc 192.168.1.0
+  112  ipcalc 192.168.1.0/24
+  113  ipcalc 192.168.1.0/25
+  114  ipcalc 192.168.1.0/26
+  115  ping 192.168.1.1
+  116  more saida 
+  117  exit
+  118  ls
+  119  cat saida 
+  120  nano influxData2.sh 
+  121  ls
+  122  more saida 
+  123  cat influxData.sh 
+  124  ls
+  125  cp influxData.sh influxData2.sh 
+  126  ls
+  127  cat influxData2.sh 
+  128  nano influxData2.sh 
+  129  cd testes/
+  130  ls
+  131  more output1
+  132  cd
+  133  nano influxData2.sh 
+  134  ls
+  135  sudo ./influxData2.sh < blablau > a.out
+  136  more a.out 
+  137  LS
+  138  ls
+  139  rm a.out 
+  140  sudo ./influxData2.sh < blablau > a.out
+  141  more a.out 
+  142  apt-get update
+  143  sudo apt-get update && upgrade
+  144  sudo apt-get update && upgrade && reboot
+  145  sudo apt-get upgrade
+  146  sudo reboot
+  147  nano influxData2.sh
+  148  nano influxData3.sh
+  149  cat influxData2.sh
+  150  nano influxData3.sh
+  151  ls
+  152  ls
+  153  more saida 
+  154  ls
+  155  ls -lah
+  156  ls
+  157  more a.out 
+  158  la
+  159  ls
+  160  more a.out clear
+  161  clear
+  162  ls
+  163  cat b.out 
+  164  more a.out
+  165  nano b.out 
+  166  clear
+  167  cat b.out 
+  168  cat b.out | sort -n | uniq 
+  169  cat b.out | sort -n | uniq -c
+  170  cat b.out | sort -n | uniq -c | awk NF
+  171  cat b.out | sort -n | awk NF | uniq -c 
+  172  cat b.out | sort -n | awk NF | uniq -c | sed -e s/value=/value\ / 
+  173  cat b.out | sort -n | awk NF | uniq -c | sed -e s/value=/value\ / | awk '{ printf("%s value=%s %s", $2, $1*$4, $5 ) }'
+  174  cat b.out | sort -n | awk NF | uniq -c | sed -e s/value=/value\ / | awk '{ printf("%s value=%s %s\n", $2, $1*$4, $5 ) }'
+  175  cat b.out | sort -n | awk NF | uniq -c | sed -e "s/value=/value\ /" | awk '{ printf("%s value=%s %s\n", $2, $1*$4, $5 ) }'
+  176  cat b.out | sort -n | awk NF | uniq -c | sed -e "s/value=/value\ /" | awk '{ printf("%s value=%s %s\n", $2, $1*$4, $5 ) }' > c.out
+  177  ls
+  178  clear
+  179  cat a.out 
+  180  cat b.out 
+  181  clear
+  182  cat b.out 
+  183  cat c.out 
+  184  cat a.out | sort -n | awk NF | uniq -c | sed -e "s/value=/value\ /" | awk '{ printf("%s value=%s %s\n", $2, $1*$4, $5 ) }'
+  185  ls
+  186  cd testes/
+  187  ls
+  188  cd 
+  189  ls
+  190  cat b.out 
+  191  rm b.out 
+  192  cat c.out 
+  193  rm c.out 
+  194  ls
+  195  more blablau 
+  196  ls
+  197  rm influxData3.sh 
+  198  ls
+  199  more saida 
+  200  ls
+  201  rm saida 
+  202  ls
+  203  more a.out 
+  204  cat a.out | sort -n | awk NF | uniq -c | sed -e "s/value=/value\ /" | awk '{ printf("%s value=%s %s\n", $2, $1*$4, $5 ) }'
+  205  ls
+  206  cd testes/
+  207  ls
+  208  cat comando.txt 
+  209  more data 
+  210  ls
+  211  cat influxData.sh 
+  212  cd ..
+  213  ls
+  214  cd testes/
+  215  ls
+  216  cd ..
+  217  ls
+  218  rm influxData.sh 
+  219  nano influxData2.sh 
+  220  ls
+  221  ls -lah
+  222  ls
+  223  cat coletor.txt 
+  224  ls
+  225  mkdir primeiros_testes
+  226  ls
+  227  cp coletor.txt gerador.sh primeiros_testes/
+  228  ls
+  229  cd primeiros_testes/
+  230  ls
+  231  cd ..
+  232  ls
+  233  rm coletor.txt gerador.sh 
+  234  ls
+  235  cd primeiros_testes/
+  236  ls
+  237  cd
+  238  ls
+  239  cd openflow/
+  240  ls
+  241  cd ..
+  242  ls
+  243  cd pi/
+  244  ls
+  245  cd ..
+  246  ls
+  247  mv influxData2.sh influxData.sh 
+  248  ls -lah
+  249  ls
+  250  mv primeiros_testes/ testes/
+  251  ls
+  252  cd testes/
+  253  ls
+  254  cd
+  255  ls
+  256  cd sflow-tools/
+  257  ls
+  258  cd sflowtool-3.35/
+  259  ls
+  260  cd
+  261  ls
+  262  cd testes/
+  263  ls
+  264  mv influxData.sh.old 
+  265  mv influxData.sh_old 
+  266  mv influxData_old.sh
+  267  mv influxData.sh influxData.sh.old 
+  268  ls
+  269  ls -lah
+  270  ls
+  271  cat teste.awk 
+  272  ls
+  273  cat comando.txt 
+  274  cd
+  275  ls
+  276  more a.out 
+  277  cat a.out | grep octets,ipprotocol=udp,in_vlan=250,out_vlan=250,srcIP=,dstIP=,srcMAC=000000010101,dstMAC=000000010201 value=50 1479490268 
+  278  cat a.out | grep octets,ipprotocol=udp,in_vlan=250,out_vlan=250,srcIP=,dstIP=,srcMAC=000000010101,dstMAC=000000010201
+  279  cat a.out | grep srcIP=,dstIP=
+  280  more a.out 
+  281  ls
+  282  nano influxData.sh 
+  283  cd testes/
+  284  ls
+  285  cat influxData.sh.old 
+  286  exit
+  287  ls
+  288  nano influxData.sh 
+  289  cat influxData.sh 
+  290  nano influxData.sh 
+  291  LS
+  292  ls
+  293  mv blablau data
+  294  ls
+  295  ./influxData.sh < data > data1 
+  296  more data1
+  297  cat data1 | grep NULL
+  298  ls
+  299  rm a.out b.out 
+  300  nano influxData2.sh 
+  301  ls
+  302  chmod 777 influxData2.sh 
+  303  ls
+  304  ./influxData2.sh < data1 > data2
+  305  ls
+  306  cat data2
+  307  ls
+  308  cat influxData2.sh 
+  309  nano influxData2.sh 
+  310  ls
+  311  nano influxData.sh 
+  312  ls
+  313  rm data1 data2
+  314  ls
+  315  ./influxData.sh < data 
+  316  ls
+  317  ./influxData.sh < data > data1
+  318  more data1
+  319  ls
+  320  nano influxData.sh 
+  321  ls
+  322  rm data1
+  323  ls
+  324  mv influxData.sh influxData1.sh
+  325  ls
+  326  ./influxData1.sh < data > data1 | ./influxData2.sh < data1 > data2
+  327  ls
+  328  cat data2
+  329  more data1
+  330  ls
+  331  ./influxData2.sh < data1 > data2
+  332  cat data2 
+  333  ls
+  334  cat /teste/comando.txt
+  335  cat /testes/comando.txt
+  336  ls
+  337  cd testes/
+  338  cat comando.txt 
+  339  cd
+  340  curl -i -XPOST 'http://localhost:8086/write?db=teste&precision=s' --data-binary @data
+  341  ls
+  342  curl -i -XPOST 'http://localhost:8086/write?db=teste2&precision=s' --data-binary @data2
+  343  exit
+  344  more a.out 
+  345  nano b.out
+  346  nano influxData3.sh
+  347  ls
+  348  chmod influxData3.sh 777
+  349  chmod  777 influxData3.sh
+  350  ls -lah
+  351  rm influxData2.sh.save 
+  352  ls -lah
+  353  ./influxData3.sh < b.out
+  354  nano influxData3.sh 
+  355  ./influxData3.sh < b.out
+  356  nano influxData3.sh 
+  357  ./influxData3.sh < b.out
+  358  nano influxData3.sh 
+  359  ls
+  360  guisaulo@wall-ptt:~$ cat a.out | sort -n | awk NF | uniq -c | sed -e "s/value=/value\ /" | awk '{ printf("%s value=%s %s\n", $2, $1*$4, $5 ) }' > b.out
+  361  cat a.out | sort -n | awk NF | uniq -c | sed -e "s/value=/value\ /" | awk '{ printf("%s value=%s %s\n", $2, $1*$4, $5 ) }' > b.out
+  362  ls
+  363  clear
+  364  cat b.out 
+  365  cat b.out | sort -n
+  366  cat a.out | sort -n | awk NF | uniq -c | sed -e "s/value=/value\ /" | awk '{ printf("%s value=%s %s\n", $2, $1*$4, $5 ) }' | sort - k 5
+  367  cat a.out | sort -n | awk NF | uniq -c | sed -e "s/value=/value\ /" | awk '{ printf("%s value=%s %s\n", $2, $1*$4, $5 ) }' | sort -k 5
+  368  cat a.out | sort -n | awk NF | uniq -c | sed -e "s/value=/value\ /" | awk '{ printf("%s value=%s %s\n", $2, $1*$4, $5 ) }' | sort -k 3
+  369  cat a.out | sort -n | awk NF | uniq -c | sed -e "s/value=/value\ /" | awk '{ printf("%s value=%s %s\n", $2, $1*$4, $5 ) }' | sort -kn 3
+  370  cat a.out | sort -n | awk NF | uniq -c | sed -e "s/value=/value\ /" | awk '{ printf("%s value=%s %s\n", $2, $1*$4, $5 ) }' | sort -n -k 3
+  371  cat a.out | sort -n | awk NF | uniq -c | sed -e "s/value=/value\ /" | awk '{ printf("%s value=%s %s\n", $2, $1*$4, $5 ) }' | sort -k 3
+  372  cat a.out | sort -n | awk NF | uniq -c | sed -e "s/value=/value\ /" | awk '{ printf("%s value=%s %s\n", $2, $1*$4, $5 ) }' | sort -k 3 > b.out
+  373  ls
+  374  cat b.out 
+  375  influx
+  376  cd testes/
+  377  cat comando.txt 
+  378  curl -i -XPOST 'http://localhost:8086/write?db=teste&precision=s' --data-binary @data
+  379  curl -i -XPOST 'http://localhost:8086/write?db=teste2&precision=s' --data-binary @b.out
+  380  influx
+  381  ls
+  382  cd
+  383  ls
+  384  curl -i -XPOST 'http://localhost:8086/write?db=teste2&precision=s' --data-binary @b.out
+  385  more blablau 
+  386  ls
+  387  cat influxData.sh 
+  388  exit
+  389  ls
+  390  more data
+  391  ls
+  392  nano teste.txt
+  393  more data
+  394  nano teste.txt 
+  395  ls
+  396  cat teste
+  397  cat teste.txt 
+  398  ls
+  399  vi influxData1.sh 
+  400  ls
+  401  cat data2 
+  402  ls
+  403  more influxData1.sh 
+  404  ls
+  405  cat data2 
+  406  exit
+  407  ls
+  408  cd mininet/
+  409  ls
+  410  cd ..
+  411  ls
+  412  cd pi
+  413  ls
+  414  cd mininet/
+  415  ls
+  416  sudo ./sdx-mininet.py
+  417  exit
+  418  telnet localhost 2605
+  419  ls
+  420  for i in $(seq 6) ; do sudo ovs-vsctl del-controller sw$i; done
+  421  for i in $(seq 6) ; do sudo ovs-vsctl --no-wait set bridge sw$i stp_enable=true; done
+  422  for i in $(seq 6); do sudo ovs-ofctl add-flow sw$i actions=NORMAL; done
+  423  sudo ovs-vsctl del-controller bgpmg
+  424  sudo ovs-vsctl --no-wait set bridge bgpmg stp_enable=true
+  425  sudo ovs-ofctl add-flow bgpmg actions=NORMAL
+  426  xterm rs1
+  427  for i in $(seq 6) ; do sudo ovs-vsctl del-controller sw$i; done
+  428  for i in $(seq 6) ; do sudo ovs-vsctl --no-wait set bridge sw$i stp_enable=true; done
+  429  for i in $(seq 6); do sudo ovs-ofctl add-flow sw$i actions=NORMAL; done
+  430  sudo ovs-vsctl del-controller bgpmg
+  431  sudo ovs-vsctl --no-wait set bridge bgpmg stp_enable=true
+  432  sudo ovs-ofctl add-flow bgpmg actions=NORMAL
+  433  show ip bgp neighbors 10.1.1.1 advertised-routes
+  434  ls
+  435  cd mininet/
+  436  ls
+  437  cd ..
+  438  cd pi/
+  439  ls
+  440  cd mininet/
+  441  ls
+  442  cat mininet_readme.txt 
+  443  ls
+  444  cd ..
+  445  ls
+  446  cd sflow/
+  447  ls
+  448  sudo mn -c
+  449  uname
+  450  uname -a
+  451  uname --help
+  452  uname -m
+  453  uname -p
+  454  uname -i
+  455  uname -o
+  456  uname -o --version
+  457  ls
+  458  cd pi/
+  459  ls
+  460  cd mininet/
+  461  ls
+  462  ./sdx-mininet.py 
+  463  sudo ./sdx-mininet.py 
+  464  ls
+  465  cd /pi/
+  466  ls
+  467  cd pi/
+  468  ls
+  469  cd mininet/
+  470  çs
+  471  ls
+  472  sudo ./sdx-mininet.py
+  473  exit
+  474  route -nv
+  475  exit
+  476  ip route
+  477  ping 10.1.1.2
+  478  ping 10.1.1.1
+  479  ifc
+  480  ifconfig
+  481  ifconfig 
+  482  ping 10.1.1.253
+  483  ping 10.1.1.254
+  484  telnet localhost 2605
+  485  exit
+  486  telnet localhost 2605
+  487  exit
+  488  telnet localhost 2605
+  489  clear
+  490  ping 172.16.1.2
+  491  ifconfig 
+  492  ping 10.1.1.254
+  493  ping 10.1.1.254
+  494  telnet localhost 2605
+  495  ip route
+  496  ping 10.1.1.254
+  497  ip route
+  498  show ip bgo neighbors
+  499  show ip bgp neighbors
+  500  show ip bgp summary
+  501  telnet localhost 2605
+  502  iperf -s -u -i 10
+  503  telnet localhost 2605
+  504  iperf -s -u -i 10
+  505  clear
+  506  iperf -s -u -i 10
+  507  clear
+  508  ping 192.168.2.1
+  509  iperf -c 192.168.1.1 -p 10
+  510  iperf -c 192.168.1.1 -P 10
+  511  iperf -c 10.1.1.1 -P 10
+  512  ifconfig
+  513  clear
+  514  clear
+  515  iperf -s -u -i 10
+  516  ping 192.168.4.1
+  517  iperf -s -u -i 10
+  518  ifconfig
+  519  iperf -s -u -i 10
+  520  man iperf
+  521  iperf -s -u -i 10
+  522  ifconfig
+  523  clear
+  524  iperf -c 192.168.3.1 -P 10
+  525  iperf -c 192.168.3.1
+  526  iperf -c 192.168.3.1 -P 10
+  527  ping 192.168.3.1
+  528  iperf -c 10.1.1.3 -P 10
+  529  ping 10.1.1.3
+  530  iperf -c 10.1.1.3 -P 10
+  531  iperf -c 10.1.1.3 -P 10 -b 10
+  532  iperf -c 10.1.1.3 -P 10 -b 10M
+  533  iperf -s -u -i 10
+  534  clear
+  535  for i in $(seq 6) ; do sudo ovs-vsctl del-controller sw$i; done
+  536  for i in $(seq 6) ; do sudo ovs-vsctl --no-wait set bridge sw$i stp_enable=true; done
+  537  for i in $(seq 6); do sudo ovs-ofctl add-flow sw$i actions=NORMAL; done
+  538  sudo ovs-vsctl del-controller bgpmg
+  539  sudo ovs-vsctl --no-wait set bridge bgpmg stp_enable=true
+  540  sudo ovs-ofctl add-flow bgpmg actions=NORMAL
+  541  top
+  542  exit
+  543  iperf -c 192.168.1.1 -P 10IP
+  544  clear
+  545  iperf -c 192.168.3.1 -P 10
+  546  iperf -c 10.1.1.3 -P 10
+  547  iperf -c 192.168.3.1 -P 10
+  548  iperf -c 192.168.3.1 -P 10 -b 10M
+  549  man iperf
+  550  iperf -c 192.168.3.1 -P 10 -b 1M -t 150 
+  551  iperf -s -u -i 10
+  552  iperf -s -u -i 10 
+  553  ls
+  554  cd sflow-tools/
+  555  ls
+  556  cd
+  557  ls
+  558  cd mininet/
+  559  ls
+  560  locate start.sh
+  561  exit
+  562  ls
+  563  cd sflow-tools/
+  564  ls
+  565  cd ..
+  566  cd pi/
+  567  ls
+  568  cd sflow/
+  569  ls
+  570  cat sflow_readme.txt 
+  571  pwd
+  572  ls
+  573  sflowtool > testeeee
+  574  ls
+  575  cat testeeee 
+  576  ls
+  577  ls -lah
+  578  rm testeeee 
+  579  ls
+  580  cd scripts/
+  581  ls
+  582  cat README 
+  583  cd 
+  584  cd pi/
+  585  ls
+  586  cd sflow/
+  587  ls
+  588  cd scripts/
+  589  ls
+  590  cd utils/
+  591  ls
+  592  cd ..
+  593  ls
+  594  cd .
+  595  ls
+  596  cd ..
+  597  ls
+  598  cd ..
+  599  ls
+  600  cd sflow/
+  601  ls
+  602  cat sflow_readme.txt 
+  603  sflowtool
+  604  ls
+  605  cat sflow_readme.txt 
+  606  exit
+  607  cd pi
+  608  cd mininet/
+  609  sudo ./sdx-mininet.py
+  610  sudo mn -c
+  611  ls
+  612  vim sdx-mininet.py 
+  613  cd ..
+  614  ls
+  615  cd ..
+  616  ls
+  617  cd mininet/
+  618  ls
+  619  cd ..
+  620  ls
+  621  cd pi/
+  622  ls
+  623  cd mininet/
+  624  ls
+  625  vi sdx-mininet1.py 
+  626  sudo ./sdx-mininet.py 
+  627  sudo mn -c
+  628  sudo ./sdx-mininet.py 
+  629  sudo mn -c
+  630  sudo ./sdx-mininet.py 
+  631  ls
+  632  vi mininet_readme.txt 
+  633  vi sdx-mininet-gui.py 
+  634  sudo ./sdx-mininet-gui.py 172.16.0.1
+  635  sudo mn -c
+  636  sudo ./sdx-mininet-gui.py 172.16.0.1
+  637  sudo mn -c
+  638  ls
+  639  cd ..
+  640  ls
+  641  cd sl
+  642  cd sflow/
+  643  ls
+  644  cd ..
+  645  ls
+  646  cd ..
+  647  ls
+  648  cd openflow/
+  649  ls
+  650  cd ..
+  651  ls
+  652  cd testes/
+  653  ls
+  654  cd ..
+  655  ls
+  656  cd pi/
+  657  ls
+  658  ls sflow/
+  659  ls
+  660  ps aux
+  661  sudo mn -c
+  662  ps aux
+  663  killall -u quagga -9
+  664  sudo killall -u quagga -9
+  665  ps aux
+  666  cd mininet/
+  667  sudo ./sdx-mininet-gui.py 172.16.0.1
+  668  sudo mn -c
+  669  ps aux
+  670  sudo killall -u quagga -9
+  671  ps aux
+  672  sudo ./sdx-mininet.py 
+  673  ps aux
+  674  sudo ./sdx-mininet.py 
+  675  for i in $(seq 6) ; do sudo ovs-vsctl del-controller sw$i; done
+  676  for i in $(seq 6) ; do sudo ovs-vsctl set bridge sw$i stp_enable=true; done
+  677  sudo ./sdx-mininet.py
+  678  for i in $(seq 6) ; do sudo ovs-vsctl del-controller sw$i; done
+  679  for i in $(seq 6) ; do sudo ovs-vsctl set bridge sw$i stp_enable=true; done
+  680  for i in $(seq 6); do sudo ovs-ofctl add-flow sw$i actions=NORMAL; done
+  681  sudo ./sdx-mininet.py 
+  682  exiy
+  683  exit
+  684  ifconfig 
+  685  ovs-vsctl show
+  686  sudo ovs-vsctl show
+  687  for i in $(seq 6) ; do sudo ovs-vsctl del-controller sw$i; done
+  688  sudo ovs-vsctl show
+  689  for i in $(seq 6) ; do sudo ovs-vsctl --no-wait set bridge sw$i stp_enable=true; done
+  690  for i in $(seq 6); do sudo ovs-ofctl add-flow sw$i actions=NORMAL; done
+  691  sudo ovs-vsctl show
+  692  sudo ovs-ofctl 
+  693  sudo ovs-ofctl --help
+  694  for i in $(seq 6) ; do sudo ovs-vsctl --no-wait set bridge sw$i stp_enable=true; done
+  695  for i in $(seq 6) ; do sudo ovs-vsctl del-controller sw$i; done
+  696  sudo ovs-vsctl del-controller bgpmg
+  697  sudo ovs-vsctl --no-wait set bridge bgpmg stp_enable=true
+  698  sudo ovs-ofctl add-flow bgpmg actions=NORMAL
+  699  sudo ovs-ofctl add-flow bgpmg --help
+  700  sudo ovs-ofctl show sw1
+  701  for i in $(seq 6) ; do sudo ovs-vsctl --no-wait set bridge sw$i stp_enable=true; done
+  702  for i in $(seq 6); do sudo ovs-ofctl add-flow sw$i act
+  703  for i in $(seq 6); do sudo ovs-ofctl add-flow sw$i actions=NORMAL; done
+  704  sudo ovs-ofctl 
+  705  sudo ovs-ofctl  --help
+  706  sudo ovs-ofctl dump-flows sq1
+  707  sudo ovs-ofctl dump-flows sq
+  708  sudo ovs-ofctl dump-flows sw1
+  709  for i in $(seq 6) ; do sudo ovs-vsctl del-controller sw$i; done
+  710  for i in $(seq 6); do sudo ovs-ofctl add-flow sw$i actions=NORMAL; done
+  711  sudo ovs-ofctl dump-flows sw1
+  712  sudo ovs-ofctl show sw1
+  713  sudo ovs-vsctl show
+  714  sudo ovs-ofctl dump-flows sw1
+  715  sudo ovs-ofctl dump-flows sw2
+  716  sudo ovs-ofctl dump-flows sw3
+  717  sudo ovs-ofctl dump-flows sw4
+  718  sudo ovs-ofctl dump-flows sw5
+  719  for i in $(seq 6) ; do sudo ovs-vsctl del-controller sw$i; done
+  720  sudo ovs-ofctl dump-flows sw5
+  721  for i in $(seq 6) ; do sudo ovs-vsctl --no-wait set bridge sw$i stp_enable=true; done
+  722  for i in $(seq 6) ; do sudo ovs-vsctl set bridge sw$i stp_enable=true
+  723  for i in $(seq 6) ; do sudo ovs-vsctl set bridge sw$i stp_enable=true; done
+  724  sudo ovs-ofctl dump-flows sw5
+  725  sudo ovs-vsctl --no-wait set bridge bgpmg stp_enable=true
+  726  ovs-ofctl show
+  727  ovs-ofctl show brige
+  728  ovs-ofctl show bridge
+  729  ovs-ofctl 
+  730  ovs-ofctl --help
+  731  for i in $(seq 6) ; do sudo ovs-vsctl set bridge sw$i stp_enable=true; done
+  732  for i in $(seq 6) ; do echo sw$i; sudo ovs-vsctl set bridge sw$i stp_enable=true; done
+  733  for i in $(seq 6) ; do echo sw$i; sudo ovs-vsctl set bridge sw$i rstp_enable=true; done
+  734  sudo ovs-ofctl dump-flows sw5
+  735  for i in $(seq 6) ; do sudo ovs-vsctl del-controller sw$i; done
+  736  for i in $(seq 6) ; do sudo ovs-vsctl --no-wait set bridge sw$i stp_enable=true; done
+  737  for i in $(seq 6) ; do sudo ovs-vsctl --no-wait set bridge sw$i rstp_enable=true; done
+  738  for i in $(seq 6) ; do sudo ovs-vsctl --no-wait set bridge sw$i stp_enable=false; done
+  739  for i in $(seq 6) ; do sudo ovs-vsctl --no-wait set bridge sw$i rstp_enable=true; done
+  740  for i in $(seq 6); do sudo ovs-ofctl add-flow sw$i actions=NORMAL; done
+  741  sudo ovs-vsctl del-controller bgpmg
+  742  sudo ovs-vsctl --no-wait set bridge bgpmg rstp_enable=true
+  743  sudo ovs-ofctl add-flow bgpmg actions=NORMAL
+  744  for i in $(seq 6) ; do sudo ovs-vsctl --no-wait set bridge sw$i rstp_enable=true; done
+  745  for i in $(seq 6) ; do sudo ovs-vsctl --no-wait set bridge sw$i stp_enable=true; done
+  746  for i in $(seq 6) ; do sudo ovs-vsctl --no-wait set bridge sw$i rstp_enable=true; done
+  747  ps aux
+  748  for i in $(seq 6) ; do sudo ovs-vsctl del-controller sw$i; done
+  749  for i in $(seq 6) ; do sudo ovs-vsctl --no-wait set bridge sw$i stp_enable=true; done
+  750  sudo ovs-vsctl del-controller bgpmg
+  751  sudo ovs-vsctl --no-wait set bridge bgpmg stp_enable=true
+  752  sudo ovs-ofctl add-flow bgpmg actions=NORMAL
+  753  sudo ovs-ofctl dump-flows sw5
+  754  sudo ovs-ofctl dump-flows sw1
+  755  sudo ovs-ofctl show sw1
+  756  sudo ovs-ofctl dump-flows sw1
+  757  sudo ovs-ofctl dump-flows sw2
+  758  sudo ovs-ofctl add-flow bgpmg actions=NORMAL
+  759  sudo ovs-ofctl dump-flows sw2
+  760  for i in $(seq 6); do sudo ovs-ofctl add-flow sw$i actions=NORMAL; done
+  761  sudo ovs-ofctl dump-flows sw2
+  762  for i in $(seq 6) ; do sudo ovs-vsctl --no-wait set bridge sw$i stp_enable=true; done
+  763  for i in $(seq 6) ; do sudo ovs-vsctl --no-wait set bridge sw$i rstp_enable=true; done
+  764  for i in $(seq 6) ; do sudo ovs-vsctl --no-wait set bridge bgpmg rstp_enable=true; done
+  765  ovs-vsctl set bridge ovs-br stp_enable=false
+  766  sudo ovs-vsctl set bridge ovs-br stp_enable=false
+  767  sudo ovs-vsctl set bridge sw2e stp_enable=false
+  768  for i in $(seq 6) ; do echo sw$1; sudo ovs-vsctl set bridge sw$i stp_enable=true; done
+  769  for i in $(seq 6) ; do echo sw$i; sudo ovs-vsctl set bridge sw$i stp_enable=true; done
+  770  sudo ovs-vsctl --no-wait set bridge bgpmg stp_enable=true
+  771  for i in $(seq 6); do echo sw$i; sudo ovs-ofctl add-flow sw$i actions=NORMAL; done
+  772  sudo ovs-ofctl add-flow bgpmg actions=NORMAL
+  773  exfor i in $(seq 6) ; do sudo ovs-vsctl del-controller sw$i; done
+  774  for i in $(seq 6) ; do sudo ovs-vsctl set bridge sw$i stp_enable=true; done
+  775  for i in $(seq 6); do sudo ovs-ofctl add-flow sw$i actions=NORMAL; done
+  776  sudo ovs-vsctl del-controller bgpmg
+  777  sudo ovs-vsctl set bridge bgpmg stp_enable=true
+  778  sudo ovs-ofctl add-flow bgpmg actions=NORMAL
+  779  for i in $(seq 6) ; do sudo ovs-vsctl del-controller sw$i; done
+  780  for i in $(seq 6) ; do sudo ovs-vsctl set bridge sw$i stp_enable=true; done
+  781  for i in $(seq 6); do sudo ovs-ofctl add-flow sw$i actions=NORMAL; done
+  782  sudo ovs-vsctl del-controller bgpmg
+  783  sudo ovs-vsctl set bridge bgpmg stp_enable=true
+  784  sudo ovs-ofctl add-flow bgpmg actions=NORMAL
+  785  for i in $(seq 6) ; do sudo ovs-vsctl del-controller sw$i; done
+  786  for i in $(seq 6) ; do sudo ovs-vsctl set bridge sw$i stp_enable=true; done
+  787  for i in $(seq 6); do sudo ovs-ofctl add-flow sw$i actions=NORMAL; done
+  788  sudo ovs-vsctl del-controller bgpmg
+  789  sudo ovs-vsctl set bridge bgpmg stp_enable=true
+  790  sudo ovs-ofctl add-flow bgpmg actions=NORMAL
+  791  ls
+  792  cd pi
+  793  ls
+  794  cd sflow/
+  795  ls
+  796  cat sflow_readme.txt 
+  797  ls
+  798  history
+  799  history | grep sflow
+  800  history
+  801  more history
+  802  history --help
+  803  man history
+  804  history > historico.txt
